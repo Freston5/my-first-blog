@@ -8,6 +8,13 @@
             <h2><em>Diseño y producción</em></h2>
             <p>Aqui encontraras todos los diseños q realizamos</p>
             <br />
+             <div>
+            {% for post in posts %}
+             <div>
+            <p>published: {{ post.fecha_publicada }}</p>
+            <h1><a href="">{{ post.titulo }}</a></h1>
+            <p>{{ post.texto|linebreaksbr }}</p>
+             {% endfor %}
             <div>
             <h3><a href="">Catalogo</a></h3>
             <a href="https://daysifernandez.pythonanywhere.com">link</a>
