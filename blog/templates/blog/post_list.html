@@ -1,43 +1,13 @@
 {% extends 'blog/base.html' %}
-{% load staticfiles %}
-<html>
-            {% for post in posts %}
-        <div class="post">
-            <div class="date">
-                {{ post.fecha_publicada }}
-            </div>
-            <h1><a href="{% url 'blog.views.post_detail' pk=post.pk %}">{{ post.titulo }}</a></h1>
-            <p>{{ post.texto|linebreaksbr }}</p>
-        </div>
-    {% endfor %}
-        <body>
-            <h1><strong>Bienvenidos a mi pagina</strong></h1>
-            <br />
-            <h2><em>Diseño y producción</em></h2>
-            <p>Aqui encontraras todos los diseños q realizamos</p>
-            </div>
-             <div class="post">
-             <br />
-            <div class="content container">
-        <div class="row">
-            <div class="col-md-8">
+
+{% block content %}     
                 {% for post in posts %}
                     <div class="post">
                         <div class="date">
                             {{ post.fecha_publicada }}
                         </div>
-                        <h1><a href="">{{ post.titulo }}</a></h1>
-                        <p>{{ post.texto|linebreaksbr }}</p>
+                        <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.titulo }}</a></h1>
+                        <p>{{ post.texto|linebreaksbr}}</p>
                     </div>
                 {% endfor %}
-            </div>
-        </div>
-    </div>
-            <h3><a href="">Catalogo</a></h3>
-            <a href="https://daysifernandez.pythonanywhere.com">link</a>
-            </div>
-            <div>
-            <ul><li>Cel: 70679838</li><li>La Paz Bolivia</li></ul>
-            </div>
-        </body>
-    </html>
+{% endblock content %}
