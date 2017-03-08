@@ -5,6 +5,7 @@ class Post(models.Model):
     autor = models.ForeignKey('auth.User')
     titulo = models.CharField(max_length=200)
     texto = models.TextField()
+    #imagen = models.ImageField(upload_to='static/css/images/')
     fecha_creada = models.DateTimeField(
     default=timezone.now)
     fecha_publicada = models.DateTimeField(

@@ -1,5 +1,4 @@
 {% extends 'blog/base.html' %}
-
 {% block content %}     
                 {% for post in posts %}
                     <div class="post">
@@ -8,6 +7,8 @@
                         </div>
                         <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.titulo }}</a></h1>
                         <p><font size="4">{{ post.texto|linebreaksbr}}</font></p>
+                        <!--<img src="{{ post.imagen }}"width="200" height="200">-->
                     </div>
                 {% endfor %}
 {% endblock content %}
+
